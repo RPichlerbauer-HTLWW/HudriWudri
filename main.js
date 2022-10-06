@@ -1,24 +1,14 @@
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('./sw.js')
-    .then(() => { console.log('Service Worker Registered'); });
+  navigator.serviceWorker.register('./sw.js').then(() => {
+    console.log('Service Worker Registered');
+  });
 }
-let deferredPrompt;
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  document.querySelector(".hide").classList.toggle('hide', false);
-
-  deferredPrompt = e;
-});
-
-document.querySelector('.hide').addEventListener('click', async () => {
-  if (deferredPrompt !== null) {
-    deferredPrompt.prompt();
-
-    const { outcome } = await deferredPrompt.userChoice;
-
-    if (outcome === 'accepted') {
-      deferredPrompt = null;
-    }
+document.getElementById('FrontBtn').style.backgroundColor = 'darkred';
+document.getElementById('BackBtn').style.backgroundColor = 'darkred';
+function Change(element) {
+  if (element.style.backgroundColor == 'green') {
+    element.style.backgroundColor = 'darkred';
+  } else if (element.style.backgroundColor == 'darkred') {
+    element.style.backgroundColor = 'green';
   }
-});
+}
