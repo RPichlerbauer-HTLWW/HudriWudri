@@ -16,13 +16,28 @@
     <div class="container">
       <div class="row center">
         <div class="col-md">
-          <button class="block" id="FrontBtn" onclick="Change(this)">Front</button>
+          <div class="row">
+            <div class="col-6">
+              <button class="light" id="left" onclick="Change(this)">Left</button>
+            </div>
+            <div class="col-6" id="LeftCol">
+              <button class="block" id="FrontBtn" onclick="Change(this)">Front</button>
+            </div>
+          </div>
         </div>
         <div class="col-3">
-          <img src="./image/BOBInvert.png" /> <button class="btn hide">Install</button>
+          <img src="./image/BOBInvert2.png"/>
         </div>
         <div class="col-md">
-          <button class="block" id="BackBtn" onclick="Change(this)">Back</button>
+           <div class="row">
+            <div class="col-6" id="RightCol">
+              <button class="block" id="BackBtn" onclick="Change(this)">Back</button>
+            </div>
+            <div class="col-6">
+              <button class="light" id="right" onclick="Change(this)">Right</button>
+            </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
