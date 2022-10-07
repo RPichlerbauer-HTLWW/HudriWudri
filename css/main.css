@@ -9,12 +9,13 @@ body {
 img {
   filter: invert(1);
   width: 100%;
-  margin-top: 32vh;
+  margin-top: 0vh;
+  margin-bottom: 25vh;
 }
 .block {
   display: block;
   width: 100%;
-  height: 70vh;
+  height: 45vh;
   border: none;
   font-size: 16px;
   font-family: AAstroSpace;
@@ -24,28 +25,40 @@ img {
   color: white;
   border-radius: 5vh;
   border: 3px solid white;
-  margin-top: 14vh;
-  margin-bottom: 14vh;
 }
 .light {
   width: 100%;
-  height: 70vh;
+  height: 45vh;
   font-family: AAstroSpace;
   background-color: yellow;
   border-radius: 5vh;
   border: 3px solid white;
-  margin-top: 14vh;
-  margin-bottom: 14vh;
-}
-#LeftCol {
-  padding-left: 0px;
-}
-#RightCol {
-  padding-right: 0px;
 }
 .center {
   width: 100%;
   border: 3px solid white;
   border-radius: 5vh;
   margin: 0px;
+}
+.col-md {
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+}
+#KMH {
+  background-color: black;
+  width: 100%;
+  margin-top: 1vh;
+  text-align: center;
+  border-radius: 5vh;
+  color: white;
+  border: 3px solid white;
+}
+#clock {
+  background-color: black;
+  width: 100%;
+  margin-top: 10vh;
+  text-align: center;
+  border-radius: 5vh;
+  color: white;
+  border: 3px solid white;
 }

@@ -12,3 +12,8 @@ function Change(element) {
     element.style.backgroundColor = 'green';
   }
 }
+function uhr() {
+  const act = new Date();
+  document.getElementById('clock').innerHTML = act.getHours() + ":"+ act.getMinutes() + ":" + act.getSeconds();
+  window.setTimeout('uhr()', 1000);
+}
