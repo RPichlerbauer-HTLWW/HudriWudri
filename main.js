@@ -20,3 +20,26 @@ function uhr() {
     act.getHours() + ':' + act.getMinutes() + ':' + act.getSeconds();
   window.setTimeout('uhr()', 1000);
 }
+//-----------------------------------------------------------------------------------------------------------
+let lastReadingTimestamp;
+let accelerometer = new LinearAccelerationSensor();
+accelerometer.addEventListener('reading', (e) => {
+  if (lastReadingTimestamp) {
+    intervalHandler(Math.round(accelerometer.timestamp - lastReadingTimestamp));
+  }
+  lastReadingTimestamp = accelerometer.timestamp;
+  accelerationHandler(accelerometer, 'moAccel');
+});
+accelerometer.start();
+var onDeviceMotion = function (eventData) {
+  accelerationHandler(eventData.acceleration, 'moAccel');
+};
+function accelerationHandler(acceleration, targetId) {
+  var info,
+    xyz = '[X, Y, Z]';
+
+  info = xyz.replace('X', acceleration.x && acceleration.x.toFixed(3));
+  info = info.replace('Y', acceleration.y && acceleration.y.toFixed(3));
+  info = info.replace('Z', acceleration.z && acceleration.z.toFixed(3));
+  document.getElementById(targetId).innerHTML = info;
+}
